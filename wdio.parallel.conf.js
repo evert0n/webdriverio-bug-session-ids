@@ -7,8 +7,8 @@ exports.config = {
     // should work too though). These services define specific user and key (or access key)
     // values you need to put in here in order to connect to these services.
     //
-    user: process.env.BROWSERSTACK_USERNAME,
-    key: process.env.BROWSERSTACK_ACCESS_KEY,
+    user: process.env.SAUCELABS_USERNAME,
+    key: process.env.SAUCELABS_ACCESS_KEY,
     //
     // If you are using Sauce Labs, WebdriverIO takes care to update the job information
     // once the test is done. This option is set to `true` by default.
@@ -27,7 +27,7 @@ exports.config = {
         './tests/specs/*'
     ],
 
-    maxInstances: 10,
+    maxInstances: 2,
     
     // Patterns to exclude.
     exclude: [
@@ -47,49 +47,10 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-        os: 'OS X',
-        os_version: 'Yosemite',
-        browser: 'firefox',
-        browser_version: '44',
-        name: 'Parallel Tests',
-        build: 'Sample WebDriverIO tests',
-    },    
-    {
-        os: 'Windows',
-        os_version: '10',
-        browser: 'Chrome',
-        browser_version: '44',
-        name: 'Parallel Tests',
-        build: 'Sample WebDriverIO tests'
-    },
-    {
-        os: 'Windows',
-        os_version: '8.1',
-        browser: 'IE',
-        browser_version: '11',
-        name: 'Parallel Tests',
-        build: 'Sample WebDriverIO tests'
-    },
-    {
-        os: 'OS X',
-        os_version: 'El Capitan',
-        browser: 'Safari',
-        browser_version: '9.0',
-        name: 'Parallel Tests',
-        build: 'Sample WebDriverIO tests'
-    },
-    {
-        browserName: 'iPhone',
-        platform: 'MAC',
-        device: 'iPhone 6',
-        name: 'Parallel Tests',
-        build: 'Sample WebDriverIO tests'
-    },
-    {
-        browserName: 'android',
-        platform: 'ANDROID',
-        device: 'Samsung Galaxy S5',
-        name: 'Parallel Tests',
+        platform: 'OS X 10.11',
+        browserName: 'chrome',
+        version: '50.0',
+        name: 'Example via wdio runner',
         build: 'Sample WebDriverIO tests'
     }],
     //
